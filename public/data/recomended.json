@@ -1,0 +1,44 @@
+[
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 1,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 2,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 3,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 4,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 5,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 6,
+        "place": "Greenhorn",
+        "city": "Montana"
+    },
+    {
+        "imgSrc": "./imgs/greenhorn.jpg",
+        "id": 7,
+        "place": "Greenhorn",
+        "city": "Montana"
+    }
+]

@@ -21,19 +21,19 @@ export default function Slider()
             <div className="slider__images">
                 <div className="slider__images-container">
                     <img src="./imgs/northern-mountain.jpg" alt="northernMountain" />
-                    <div className="slider__images-overlay">
+                    <div className="images-overlay">
                         <h4>Northern Mountain</h4>
                     </div>
                 </div>
                 <div className="slider__images-container">
                     <img src="./imgs/MountFuji.jpg" alt="MountFuji" />
-                    <div className="slider__images-overlay">
+                    <div className="images-overlay">
                         <h4>Mount Fuji</h4>
                     </div>
                 </div>
                 <div className="slider__images-container">
                     <img src="./imgs/house.jpg" alt="house" />
-                    <div className="slider__images-overlay">
+                    <div className="images-overlay">
                         <h4>Racek’s House</h4>
                     </div>
                 </div>

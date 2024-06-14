@@ -137,23 +137,25 @@
             position: relative;
         }
 
-        .slider__images-overlay{
-            position: absolute;
-            bottom: 0;
-            padding: 16px;
-            background: #0000004e;
-            width: 100%;
 
-            h4{
-                color: var(--white);
-                font-family: Satoshi;
-                font-size: 28px;
-                font-style: normal;
-                font-weight: 700;
-            }
-        }
     }
 
+}
+
+.images-overlay{
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    background: #0000004e;
+    width: 100%;
+
+    h4{
+        color: var(--white);
+        font-family: Satoshi;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+    }
 }
 
 .recomended-gallery{
@@ -166,5 +168,19 @@
         width: 282px;
         height: 282px;
         background: black;
+        overflow: hidden;
+        border-radius: 20px;
+
+        position: relative;
+
+        .images-overlay{
+            padding: 16px 12px;
+            background: #0000004e;
+            width: 100%;
+        
+            h4{
+                font-size: 20px;
+            }
+        }
     }
 }
