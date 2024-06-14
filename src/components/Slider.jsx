@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"
+
 export default function Slider()
 {
     return(
@@ -19,12 +21,14 @@ export default function Slider()
                 </ul>
             </div>
             <div className="slider__images">
-                <div className="slider__images-container">
-                    <img src="./imgs/northern-mountain.jpg" alt="northernMountain" />
-                    <div className="images-overlay">
-                        <h4>Northern Mountain</h4>
+                <NavLink to="/detail" >
+                    <div className="slider__images-container">
+                        <img src="./imgs/northern-mountain.jpg" alt="northernMountain" />
+                        <div className="images-overlay">
+                            <h4>Northern Mountain</h4>
+                        </div>
                     </div>
-                </div>
+                </NavLink>
                 <div className="slider__images-container">
                     <img src="./imgs/MountFuji.jpg" alt="MountFuji" />
                     <div className="images-overlay">
