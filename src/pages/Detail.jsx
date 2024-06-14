@@ -1,10 +1,18 @@
 import { NavLink } from "react-router-dom"
 import '../styles/detail.scss'
+import Book from "../components/Book"
 
 export default function Detail()
 {
+    function toggleScroll() {
+        document.body.classList.toggle('no-scroll');
+    }
+
     return (
         <div className="detail">
+            {/* Book */}
+            <Book />
+
             <div className="detail-background">
                 <img src="./imgs/MountFuji.jpg" alt="detalBackground" />
                 <div className="wrapper">
@@ -30,7 +38,7 @@ export default function Detail()
                         </div>
                         <p>That was such a nice place. The most beautiful place I’ve ever seen. My advice to everyone not to forget to take warm coat</p>
                     </div>
-                    <button className="book__btn">Book now</button>
+                    <button className="book__btn" onClick={toggleScroll}>Book now</button>
                 </div>
             </div>
         </div>

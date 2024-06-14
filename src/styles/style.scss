@@ -28,7 +28,7 @@
     --secondary: #D0CBFF;
     --white: #ffffff;
     --black: #141414;
-    --grey: #888888;
+    --gray: #888888;
     --input-grey: #636363;
     --inactive: #B4B0DA;
 }
@@ -39,6 +39,10 @@ html{
 
 body{
     font-family: 'Satoshi', sans-serif;
+}
+
+.no-scroll{
+    overflow: hidden;
 }
 
 button{
