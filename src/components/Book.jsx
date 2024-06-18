@@ -3,6 +3,9 @@ import { useState } from "react"
 export default function Book(){
 
     const [book, setBook] = useState()
+    const [showFlags, setShowFlags] = useState(true)
+    const [country, setCountry] = useState("kg")
+
 
     const [peopleCount, setPeopleCount] = useState(0)
 
@@ -28,6 +31,17 @@ export default function Book(){
         event.preventDefault()
     }
 
+    function showPhoneFlags()
+    {
+        setShowFlags(!showFlags)
+    }
+
+    function selectPhone(country)
+    {
+        setCountry(country)
+        setShowFlags(true)
+    }
+
     return (
         <div className={`book ${book}`}>
             <div className="book__container">
@@ -38,7 +52,32 @@ export default function Book(){
                 <p>To submit an application for a tour reservation, you need to fill in your information and select the number of people for the reservation</p>
                 <form className="book__form">
                     <label htmlFor="phone">Phone number</label>
-                    <input type="text" id="phone" name="phone" />
+                    <div className="book__form-phone">
+                        <ol className="show__phone-flag">
+                            <div className="country__option" onClick={showPhoneFlags}>
+                                <img src={`./imgs/flag_${country}.svg`} alt="flag" />
+                                <div className="phone__arrow"></div>
+                            </div>
+                        </ol>
+                        <ol className={`select__phone-flag ${showFlags ?  "phone__select-active": null}`}>
+                            <div className="country__option" onClick={()=>{selectPhone("kg")}}>
+                                <img src="./imgs/flag_kg.svg" alt="flag" />
+                                <strong>+996</strong>
+                                <div className="phone__arrow"></div>
+                            </div>
+                            <div className="country__option" onClick={()=>{selectPhone("kz")}}>
+                                <img src="./imgs/flag_kz.svg" alt="flag" />
+                                <strong>+7</strong>
+                                <div className="phone__arrow"></div>
+                            </div>
+                            <div className="country__option" onClick={()=>{selectPhone("ru")}}>
+                                <img src="./imgs/flag_ru.svg" alt="flag" />
+                                <strong>+7</strong>
+                                <div className="phone__arrow"></div>
+                            </div>
+                        </ol>
+                    <input type="text" id="phone" maxLength={13} name="phone" placeholder="+996 (999) 999 999" />
+                    </div>
                     <label htmlFor="comment">Commentaries to trip</label>
                     <input type="text" placeholder="Write your wishes to trip..." id="comment" name="comment" />
                     <label htmlFor="counter">Amount of people</label>

@@ -1,7 +1,21 @@
 import { NavLink } from "react-router-dom"
 
+import { getTrips } from "../api"
+import { useState, useEffect } from "react"
+
 export default function Slider()
 {
+
+    const [trip, setTrip] = useState([])
+
+    useEffect(()=>{
+        getTrips().then(( data ) => {
+            console.log(data)
+            // setRandomMeal(meal)
+        })
+    },[])
+
+
     return(
         <div className="slider wrapper">
             <div className="slider__top">
