@@ -9,9 +9,8 @@ export default function Slider()
     const [trip, setTrip] = useState([])
 
     useEffect(()=>{
-        getTrips().then(( data ) => {
+        getTrips(0, 10).then(( data ) => {
             console.log(data)
-            // setRandomMeal(meal)
         })
     },[])
 

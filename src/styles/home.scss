@@ -180,6 +180,11 @@
         overflow: hidden;
         border-radius: 20px;
         position: relative;
+        object-fit: contain;
+
+        img{
+            height: 100%;
+        }
 
         .images-overlay{
             padding: 16px 12px;
