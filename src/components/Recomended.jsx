@@ -2,26 +2,16 @@ import { useState } from 'react'
 import { NavLink } from "react-router-dom"
 import '../styles/home.scss'
 import { useEffect } from 'react'
+import { getTrips } from "../api"
 
 export default function Recomended()
 {
-    const [imgData, setImgData] = useState([])
-
-    async function getData(url)
-    {
-        try{
-            const responce = await fetch(url)
-            const data = await responce.json()
-
-            setImgData(data)
-            
-        }catch (err){
-            console.log(err.message)
-        }
-    }
+    const [trip, setTrip] = useState([])
 
     useEffect(()=>{
-        getData('./data/recomended.json')
+        getTrips(0, 12).then(( {data} ) => {
+            setTrip(data.content)
+        })
     },[])
     
 
@@ -29,12 +19,12 @@ export default function Recomended()
         <div className="recomended wrapper">
             <h2>Recomended</h2>
             <div className="recomended-gallery">
-                {imgData.map((data)=>
-                    <NavLink key={data.id} to={data.id}>
+                {trip.map((data)=>
+                    <NavLink key={data.id} to={data.id.toString()}>
                         <div  className="gallery-img">
-                            <img src={data.imgSrc}  alt="recomd" />
+                            <img src={data.image.url}  alt="recomd" />
                             <div className="images-overlay">
-                                <h4>Racek’s House</h4>
+                                <h4>{data.name}</h4>
                             </div>
                         </div>
                     </NavLink>

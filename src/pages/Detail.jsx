@@ -13,8 +13,8 @@ export default function Detail()
             {/* Book */}
             <Book />
 
-            <div className="detail-background">
-                <img src="./imgs/recomended/hiroshima.jpg" alt="detalBackground" />
+            <div className="detail-background" style={{backgroundImage:  `url("http://res.cloudinary.com/dnidwkmlb/image/upload/v1718883243/jaiib99b96vorihifqvd.png")`}}>
+                {/* <img src="./imgs/recomended/hiroshima.jpg" alt="detalBackground" /> */}
                 <div className="wrapper">
                     <NavLink to="/">
                         <button>Go back</button>
