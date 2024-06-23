@@ -1,20 +1,33 @@
 import { useState } from "react";
 
 import useBook from "../store/useBook";
+import { postBooking } from "../api";
 
-export default function Book() {
-  // const [book, setBook] = useState();
-  const [showFlags, setShowFlags] = useState(true);
-  const [country, setCountry] = useState("kg");
-
-  const [peopleCount, setPeopleCount] = useState(0);
-
+export default function Booking({tripId}) {
   const setBook = useBook((state)=> state.setBook)
   const book = useBook((state)=> state.book)
+
+  const [showFlags, setShowFlags] = useState(true);
+  const [country, setCountry] = useState("kg");
+  const [peopleCount, setPeopleCount] = useState(0);
+  const [formData, setFormData] = useState({
+    phone: '',
+    comment: ''
+  });
+
+
 
   function hideBookSumbit() {
     setBook(false);
   }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   function decreaseCountPeople(event) {
     event.preventDefault();
@@ -26,9 +39,21 @@ export default function Book() {
     setPeopleCount((value) => (value < 10 ? value + 1 : 10));
   }
 
-  function sumbiteForm(event) {
-    event.preventDefault();
-  }
+
+  function handleSubmit (e){
+    e.preventDefault();
+    
+    const sendData = {
+      phone: formData.phone,
+      comment: formData.comment,
+      peopleAmount: peopleCount,
+      tripId: Number(tripId)
+    }
+
+    postBooking(sendData).then((data)=>{
+      console.log(data)
+    })
+  };
 
   function showPhoneFlags() {
     setShowFlags(!showFlags);
@@ -96,11 +121,13 @@ export default function Book() {
               </div>
             </ol>
             <input
-              type="text"
+              type="number"
               id="phone"
               maxLength={13}
               name="phone"
               placeholder="+996 (999) 999 999"
+              value={formData.phone}
+              onChange={handleChange}
             />
           </div>
           <label htmlFor="comment">Commentaries to trip</label>
@@ -109,6 +136,8 @@ export default function Book() {
             placeholder="Write your wishes to trip..."
             id="comment"
             name="comment"
+            value={formData.comment}
+            onChange={handleChange}
           />
           <label htmlFor="counter">Amount of people</label>
           <div className="people-count">
@@ -118,7 +147,7 @@ export default function Book() {
               <button onClick={increaseCountPeople}>+</button>
             </div>
           </div>
-          <button className="book__form-submit" onClick={sumbiteForm}>
+          <button className="book__form-submit" onClick={handleSubmit}>
             Submit
           </button>
         </form>

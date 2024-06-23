@@ -16,7 +16,7 @@ export default function Recomended()
     
 
     return (
-        <div className="recomended wrapper">
+        <div id='recomended' className="recomended wrapper">
             <h2>Recomended</h2>
             <div className="recomended__gallery">
                 {trip.map((data)=>

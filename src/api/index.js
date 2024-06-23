@@ -13,5 +13,4 @@ export const getEurope = (page, size) => instance.get(`trips?page=${page}&size=$
 export const getTourById = (id) => instance.get(`trips/${id}`)
 export const getTourReview = (id) => instance.get(`trips/${id}/reviews?page=0&size=1}`)
 
-// export const searchMeals = (search) => instance.get(`search.php?s=${search}`)
-// export const getCategories = () => instance.get(`categories.php`)
+export const postBooking = (data) => instance.post(`bookings`, data)

@@ -152,17 +152,19 @@
 
     .slider__images{
         margin: 7.2rem 0 13.2rem;
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
 
         .slider__images-container{
             object-fit: cover;
             border-radius: 20px;
             overflow: hidden;
             position: relative;
-            height: 290px;
             aspect-ratio: 4 / 3;
+
 
             img{
                 position: absolute;
@@ -211,8 +213,7 @@
 
 
     .gallery__img{
-        width: 282px;
-        height: 282px;
+        aspect-ratio: 1 / 1;
         background: black;
         overflow: hidden;
         border-radius: 20px;

@@ -1,8 +1,8 @@
 import { NavLink, useParams } from "react-router-dom";
 import "../styles/detail.scss";
-import Book from "../components/Book";
+import Booking from "../components/Booking";
 import { useState, useEffect } from "react";
-import { getTourById, getTourReview } from "../api";
+import { getTourById } from "../api";
 
 import useBook from "../store/useBook";
 
@@ -10,7 +10,6 @@ export default function Detail() {
   const { id } = useParams();
 
   const [tour, setTour] = useState();
-  const [review, setReview] = useState();
 
   const setBook = useBook((state)=> state.setBook)
   const book = useBook((state)=> state.book)
@@ -27,7 +26,7 @@ export default function Detail() {
 
   return tour ? (
     <div className="detail">
-      {book ? <Book /> : ''}
+      {book ? <Booking tripId={id} /> : ''}
 
       <div
         className="detail-background"
