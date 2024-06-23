@@ -13,7 +13,6 @@ export default function Slider()
             setDiscovery(data.content)
         })
     }
-
     function setFeaturedTours(){
         getFeatured(0, 3).then(( {data} ) => {
             setDiscovery(data.content)
@@ -65,7 +64,7 @@ export default function Slider()
                     <NavLink key={data.id} to={data.id.toString()} >
                         <div className="slider__images-container">
                             <img src={data.image.url} alt="northernMountain" />
-                            <div className="images-overlay">
+                            <div className="images__overlay">
                                 <h4>{data.name}</h4>
                             </div>
                         </div>

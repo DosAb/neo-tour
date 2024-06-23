@@ -18,12 +18,12 @@ export default function Recomended()
     return (
         <div className="recomended wrapper">
             <h2>Recomended</h2>
-            <div className="recomended-gallery">
+            <div className="recomended__gallery">
                 {trip.map((data)=>
                     <NavLink key={data.id} to={data.id.toString()}>
-                        <div  className="gallery-img">
+                        <div  className="gallery__img">
                             <img src={data.image.url}  alt="recomd" />
-                            <div className="images-overlay">
+                            <div className="images__overlay">
                                 <h4>{data.name}</h4>
                             </div>
                         </div>

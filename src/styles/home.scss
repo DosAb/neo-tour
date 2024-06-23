@@ -2,13 +2,12 @@
 
 .hero{
     .hero-background{
-        border: 1px solid #000;
         background: var(--Web-bg-gradient, linear-gradient(180deg, #D0CBFF 0%, rgba(208, 203, 255, 0.00) 100%));
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     .hero__container{
-        margin-top: 176px;
+        padding-top: 176px;
         display: flex;
         justify-content: space-between;
         gap: 8rem;
@@ -178,7 +177,7 @@
 
 }
 
-.images-overlay{
+.images__overlay{
     position: absolute;
     bottom: 0;
     padding: 16px;
@@ -205,13 +204,13 @@
     padding-bottom: 13.2rem;
 }
 
-.recomended-gallery{
+.recomended__gallery{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.4rem;
 
 
-    .gallery-img{
+    .gallery__img{
         width: 282px;
         height: 282px;
         background: black;
@@ -224,7 +223,7 @@
             height: 100%;
         }
 
-        .images-overlay{
+        .images__overlay{
             padding: 16px 12px;
             background: #0000004e;
             width: 100%;

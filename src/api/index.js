@@ -10,5 +10,8 @@ export const getFeatured = (page, size) => instance.get(`trips/featured?page=${p
 export const getMostVisited = (page, size) => instance.get(`trips/most-visited?page=${page}&size=${size}`)
 export const getAsia = (page, size) => instance.get(`trips?page=${page}&size=${size}&continent=ASIA`)
 export const getEurope = (page, size) => instance.get(`trips?page=${page}&size=${size}&continent=EUROPE`)
+export const getTourById = (id) => instance.get(`trips/${id}`)
+export const getTourReview = (id) => instance.get(`trips/${id}/reviews?page=0&size=1}`)
+
 // export const searchMeals = (search) => instance.get(`search.php?s=${search}`)
 // export const getCategories = () => instance.get(`categories.php`)
