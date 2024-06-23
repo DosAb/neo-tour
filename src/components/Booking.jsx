@@ -3,19 +3,17 @@ import { useState } from "react";
 import useBook from "../store/useBook";
 import { postBooking } from "../api";
 
-export default function Booking({tripId}) {
-  const setBook = useBook((state)=> state.setBook)
-  const book = useBook((state)=> state.book)
+export default function Booking({ tripId }) {
+  const setBook = useBook((state) => state.setBook);
+  const book = useBook((state) => state.book);
 
   const [showFlags, setShowFlags] = useState(true);
   const [country, setCountry] = useState("kg");
   const [peopleCount, setPeopleCount] = useState(0);
   const [formData, setFormData] = useState({
-    phone: '',
-    comment: ''
+    phone: "",
+    comment: "",
   });
-
-
 
   function hideBookSumbit() {
     setBook(false);
@@ -25,7 +23,7 @@ export default function Booking({tripId}) {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -39,21 +37,20 @@ export default function Booking({tripId}) {
     setPeopleCount((value) => (value < 10 ? value + 1 : 10));
   }
 
-
-  function handleSubmit (e){
+  function handleSubmit(e) {
     e.preventDefault();
-    
+
     const sendData = {
       phone: formData.phone,
       comment: formData.comment,
       peopleAmount: peopleCount,
-      tripId: Number(tripId)
-    }
+      tripId: Number(tripId),
+    };
 
-    postBooking(sendData).then((data)=>{
-      console.log(data)
-    })
-  };
+    postBooking(sendData).then((data) => {
+      console.log(data);
+    });
+  }
 
   function showPhoneFlags() {
     setShowFlags(!showFlags);

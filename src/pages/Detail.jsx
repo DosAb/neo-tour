@@ -11,8 +11,8 @@ export default function Detail() {
 
   const [tour, setTour] = useState();
 
-  const setBook = useBook((state)=> state.setBook)
-  const book = useBook((state)=> state.book)
+  const setBook = useBook((state) => state.setBook);
+  const book = useBook((state) => state.book);
 
   function toggleBook() {
     setBook(true);
@@ -26,7 +26,7 @@ export default function Detail() {
 
   return tour ? (
     <div className="detail">
-      {book ? <Booking tripId={id} /> : ''}
+      {book ? <Booking tripId={id} /> : ""}
 
       <div
         className="detail-background"

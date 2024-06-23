@@ -235,3 +235,16 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .recomended__gallery{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+    }
+
+    .slider__images{
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-flow: column; /* Arrange items in a single row */
+    }
+}
